@@ -1,37 +1,37 @@
 """Math functions for calculator."""
 
-def bulk_add(p_list):
-    acc = p_list[0]
-    for i in range(1, len(p_list)):
-        acc = add(acc, p_list[i])
-    return acc    
+
+def my_reduce(func, p_list):
+    total = p_list[0]
+    for item in  p_list[1:]:
+        toatl = func(total, item)
+    return total 
 
 
-def add(num1, num2):
-    """Return the sum of the two input integers."""
+def add(arg_list):
+    """Return the sum of the integers in input list."""
 
-    return num1 + num2
+    return reduce(lambda x, y: x + y, arg_list)
 
+def subtract(arg_list):
+    """Return the result of the first number subtracte the next ones."""
 
-def subtract(num1, num2):
-    """Return the second number subtracted from the first."""
-
-    return num1 - num2
-
-
-def multiply(num1, num2):
-    """Multiply the two inputs together."""
-
-    return num1 * num2
+    return reduce(lambda x, y: x - y, arg_list)
 
 
-def divide(num1, num2):
-    """Divide the first input by the second, returning a floating point."""
+def multiply(arg_list):
+    """Multiply the all inputs together."""
+
+    return reduce(lambda x, y: x * y, arg_list)
+
+
+def divide(arg_list):
+    """Divide the first input by the next ones, returning a floating point."""
 
     # Need to turn at least one argument to float for division to
     # not be integer division
 
-    return float(num1) / num2
+    return reduce(lambda x, y: float(x) / y, arg_list)
 
 
 def square(num1):

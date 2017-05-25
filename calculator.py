@@ -35,11 +35,11 @@ while True:
     if token[0] == 'q':
         break
     elif token[0] == "+":
-        print add(token[1], token[2])
+        print add(token[1:])
     elif token[0] == "-":
-        print subtract(token[1], token[2])
+        print subtract(token[1:])
     elif token[0] == "*":
-        print multiply(token[1], token[2])
+        print multiply(token[1:])
     elif token[0] == "/":
         print divide(token[1], token[2])
     elif token[0] == "square":
